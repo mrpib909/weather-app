@@ -1,9 +1,17 @@
 
 $(document).ready(function() {
+    
+    navigator.geolocation.getCurrentPosition(function(position) {
+    loadWeather(position.coords.latitude+','+position.coords.longitude);
+  });
+    });
+   function loadWeather(location,woeid){ 
   $.simpleWeather({
-    location: 'Peoria, IL',
+    location: location,
+      woeid: woeid,
     unit: 'f',
     success: function(weather) {
+
       temp = weather.temp+'&deg;'+weather.units.temp;
         con = weather.currently;
         loc = weather.city;
@@ -19,4 +27,4 @@ $(document).ready(function() {
         $("#dayl").html(templow);
     }
   });
-});
+   }
