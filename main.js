@@ -40,6 +40,7 @@ $(document).ready(function() {
                 $("#wicon").attr('src','images/part-cloud-night.png');
             }
         }
+        
         if(check >= 18 ){
          $("body").css("background-color","#2c3e50");   
         }
