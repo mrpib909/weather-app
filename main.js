@@ -25,6 +25,9 @@ $(document).ready(function() {
         $("#windsped").html(winds);
         $("#dayh").html(temphigh);
         $("#dayl").html(templow);
+        if(con == "Fair"){
+            $("#wicon").attr('src','images/SUN.png');
+        }
     }
   });
-   }
+}
