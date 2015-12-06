@@ -3,7 +3,7 @@ body{
     margin: 0px;
     padding: 0px;
   color: white;
-  background-color: #00a2d3;
+  background-color: #4890a8;
     font-family: 'Open Sans Condensed', sans-serif;
 }
 img{
@@ -44,3 +44,4 @@ li:nth-child(even){
   float: right;
   margin-right: 30px; 
 }
+

@@ -1,9 +1,12 @@
+var d = new Date();
+var check = d.getHours();
 
 $(document).ready(function() {
     
     navigator.geolocation.getCurrentPosition(function(position) {
     loadWeather(position.coords.latitude+','+position.coords.longitude);
   });
+    
     });
    function loadWeather(location,woeid){ 
   $.simpleWeather({
@@ -27,6 +30,21 @@ $(document).ready(function() {
         $("#dayl").html(templow);
         if(con == "Fair"){
             $("#wicon").attr('src','images/SUN.png');
+            if(check >= 18){
+                $("#wicon").attr('src','images/moon.png');
+            }
+        }
+        if(con == "Partly Cloudy"){
+            $("#wicon").attr('src','images/part-cloud.png');
+            if(check >= 18){
+                $("#wicon").attr('src','images/part-cloud-night.png');
+            }
+        }
+        if(check >= 18 ){
+         $("body").css("background-color","#2c3e50");   
+        }
+        else{
+         $("body").css("background-color","#4890a8");   
         }
     }
   });
