@@ -1,6 +1,6 @@
 var d = new Date();
 var check = d.getHours();
-
+var images = ['images/sun.png','images/moon.png','images/part-cloud.png','images/part-cloud-night.png','images/rain.png','images/cloudy.png']
 $(document).ready(function() {
     
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -21,6 +21,8 @@ $(document).ready(function() {
         winds = weather.wind.direction+' '+weather.wind.speed+' '+"MPH";
         temphigh = weather.high;
         templow = weather.low;
+        windchill = weather.wind.chill;
+        heat = weather.heatindex;
   
       $("#temp").html(temp);
         $("#con").html(con);
@@ -28,16 +30,21 @@ $(document).ready(function() {
         $("#windsped").html(winds);
         $("#dayh").html(temphigh);
         $("#dayl").html(templow);
+        $("#wchill").html(windchill);
+        $("#hindex").html(heat);
         if(con == "Fair"){
-            $("#wicon").attr('src','images/SUN.png');
+            $("#wicon").attr('src',images[0]);
             if(check >= 18){
-                $("#wicon").attr('src','images/moon.png');
+                $("#wicon").attr('src',images[1]);
             }
         }
+        if(con == "Mostly Cloudy"){
+         $("#wicon").attr('src',images[5]);   
+        }
         if(con == "Partly Cloudy"){
-            $("#wicon").attr('src','images/part-cloud.png');
+            $("#wicon").attr('src',images[2]);
             if(check >= 18){
-                $("#wicon").attr('src','images/part-cloud-night.png');
+                $("#wicon").attr('src',images[3]);
             }
         }
         
