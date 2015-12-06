@@ -1,12 +1,12 @@
 var d = new Date();
 var check = d.getHours();
-var images = ['images/sun.png','images/moon.png','images/part-cloud.png','images/part-cloud-night.png','images/rain.png','images/cloudy.png']
+var images = ['images/sun.png','images/moon.png','images/part-cloud.png','images/part-cloud-night.png','images/rain.png','images/cloudy.png','images/snow.png','images/storm.png']
 $(document).ready(function() {
     
     navigator.geolocation.getCurrentPosition(function(position) {
     loadWeather(position.coords.latitude+','+position.coords.longitude);
   });
-    
+    setInterval(loadWeather,300000);
     });
    function loadWeather(location,woeid){ 
   $.simpleWeather({
@@ -32,6 +32,15 @@ $(document).ready(function() {
         $("#dayl").html(templow);
         $("#wchill").html(windchill);
         $("#hindex").html(heat);
+        if(con == "Light Rain"){
+         $("#wicon").attr('src',images[4]);
+        }
+        if(con == "showers"){
+         $("#wicon").attr('src',images[4]);
+        }
+        if(con == "Heavy Rain"){
+         $("#wicon").attr('src',images[4]);
+        }
         if(con == "Fair"){
             $("#wicon").attr('src',images[0]);
             if(check >= 18){
