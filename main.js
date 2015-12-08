@@ -32,8 +32,9 @@ $(document).ready(function() {
         $("#dayl").html(templow);
         $("#wchill").html(windchill);
         $("#hindex").html(heat);
+        
         if(con == "thundershowers"){
-            $("#wicon").attr('src',images[7]);
+            $("#wicon").attr('src',images[8]);
         }
         if(con == "fog"){
             $("#wicon").attr('src',images[5]);
