@@ -15,7 +15,7 @@ $(document).ready(function() {
     unit: 'f',
     success: function(weather) {
 
-      temp = weather.temp+'&deg;'+weather.units.temp;
+        temp = weather.temp+'&deg;'+weather.units.temp;
         con = weather.currently;
         loc = weather.city;
         winds = weather.wind.direction+' '+weather.wind.speed+' '+"MPH";
@@ -32,6 +32,18 @@ $(document).ready(function() {
         $("#dayl").html(templow);
         $("#wchill").html(windchill);
         $("#hindex").html(heat);
+        if(con == "thundershowers"){
+            $("#wicon").attr('src',images[7]);
+        }
+        if(con == "fog"){
+            $("#wicon").attr('src',images[5]);
+        }
+        if(con == "snow showers"){
+            $("#wicon").attr('src',images[6]);
+        }
+        if(con == 'mixed rain and snow'){
+           $("#wicon").attr('src',images[4]); 
+        }
         if(con == "Light Rain"){
          $("#wicon").attr('src',images[4]);
         }
@@ -46,6 +58,9 @@ $(document).ready(function() {
             if(check >= 18){
                 $("#wicon").attr('src',images[1]);
             }
+        }
+        if(con == "Cloudy"){
+         $("#wicon").attr('src',images[5]);   
         }
         if(con == "Mostly Cloudy"){
          $("#wicon").attr('src',images[5]);   
