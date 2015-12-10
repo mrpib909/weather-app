@@ -1,6 +1,6 @@
 var d = new Date();
 var check = d.getHours();
-var images = ['images/sun.png','images/moon.png','images/part-cloud.png','images/part-cloud-night.png','images/rain.png','images/cloudy.png','images/snow.png','images/storm.png']
+var images = ['images/SUN.png','images/moon.png','images/part-cloud.png','images/part-cloud-night.png','images/rain.png','images/cloudy.png','images/snow.png','images/storm.png']
 $(document).ready(function() {
     
     navigator.geolocation.getCurrentPosition(function(position) {
