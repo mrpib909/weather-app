@@ -5,6 +5,7 @@ body{
   color: white;
   background-color: #4890a8;
     font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 2em;
 }
 img{
     display: block;
@@ -49,5 +50,9 @@ li:nth-child(even){
   float: right;
   margin-right: 30px; 
 }
-
+@media screen and (max-width: 780px){
+  li{
+   font-size: 1em;   
+  }
+}
 
